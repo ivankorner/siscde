@@ -38,8 +38,6 @@ a {
     }
     }
 
-
-
     /*Error 404 */
 
     .fundo{
@@ -127,3 +125,6 @@ a {
          
         
       }
+      .ui-datepicker-calendar {
+        display: none;
+        }

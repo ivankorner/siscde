@@ -24,4 +24,7 @@
 </script>
 
 <script src="../js/ajax.js"></script>
+<script src="../js/datepicker.js"></script>
+
+
 
