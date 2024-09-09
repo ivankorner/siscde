@@ -59,6 +59,18 @@
             <li><a class="dropdown-item" href="#">Buscar</a></li>
           </ul>
         </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Instrumento
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../vistas/instrumento_nuevo.php">Nuevo</a></li>
+            <li><a class="dropdown-item" href="#">Listado</a></li>
+            <li><a class="dropdown-item" href="#">Categorías</a></li>
+            <li><a class="dropdown-item" href="#">Buscar</a></li>
+          </ul>
+        </li>
         
 
 

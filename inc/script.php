@@ -24,7 +24,18 @@
 </script>
 
 <script src="../js/ajax.js"></script>
-<script src="../js/datepicker.js"></script>
+
+<script>
+  $('.fj-control').datepicker({
+    format: "dd/mm/yyyy",
+    language: "es"
+
+    
+});
+</script>
+
+
+
 
 
 
