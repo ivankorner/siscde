@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
  
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.php?vista=home">
       <img src="./img/logo.png" alt="Bootstrap" width="75" height="27">
     </a>
   
