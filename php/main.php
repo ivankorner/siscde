@@ -51,65 +51,70 @@ function limpar_textos($texto)
 }
 
 # Funcion renombrar fotos o archivos#
-function renombrar_fotos($nombre){
-    $nombre=str_ireplace(" ", "_", $nombre);
-    $nombre=str_ireplace("/", "_", $nombre);
-    $nombre=str_ireplace("#", "_", $nombre);
-    $nombre=str_ireplace("-", "_", $nombre);
-    $nombre=str_ireplace("$", "_", $nombre);
-    $nombre=str_ireplace(".", "_", $nombre);
-    $nombre=str_ireplace(",", "_", $nombre);
-    $nombre=$nombre."_".rand(0,100);
+function renombrar_fotos($nombre)
+{
+    $nombre = str_ireplace(" ", "_", $nombre);
+    $nombre = str_ireplace("/", "_", $nombre);
+    $nombre = str_ireplace("#", "_", $nombre);
+    $nombre = str_ireplace("-", "_", $nombre);
+    $nombre = str_ireplace("$", "_", $nombre);
+    $nombre = str_ireplace(".", "_", $nombre);
+    $nombre = str_ireplace(",", "_", $nombre);
+    $nombre = $nombre . "_" . rand(0, 100);
     return $nombre;
 }
 
 
 # Funcion paginador de tablas (Verificar, cambiar por codigo de Bootstrap) #
-function paginador_tablas($pagina,$Npaginas,$url,$botones){
-    $tabla='<nav aria-label="Page navigation example">';
+function paginador_tablas($pagina, $Npaginas, $url, $botones)
+{
+    $tabla = '<nav aria-label="Page navigation example">';
 
-    if($pagina<=1){
-        $tabla.='
-        <ul class="pagination justify-content-center">
+    if ($pagina <= 1) {
+        $tabla .= '
+        <ul class="pagination justify-content-center"> 
          <li class="page-item disabled">
-            <a class="page-link" href="#">Anterior</a>
+            <a class="page-link">Anterior</a>
          </li>';
-    }else{
-        $tabla.='
+    } else {
+        $tabla .= '
 
         <ul class="pagination justify-content-center">
-         <li class="page-item"><a class="page-link" href="'.$url.($pagina-1).'">Anterior</a></li>
-         <li class="page-item"><a class="page-link" href="'.$url.'">1</a></li>
-        <li class="page-item"><a class="page-link" href="'.$url.'" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
+         <li class="page-item"><a class="page-link" href="' . $url . ($pagina - 1) . '">Anterior</a></li>
+         <li class="page-item"><a class="page-link" href="' . $url . '">1</a></li>
+        ';
     }
 
-    $ci=0;
-    for($i=$pagina; $i<=$Npaginas; $i++){
-        if($ci>=$botones){
+    $ci = 0;
+    for ($i = $pagina; $i <= $Npaginas; $i++) {
+        if ($ci >= $botones) {
             break;
         }
-        if($pagina==$i){
-            $tabla.='<li><a class="pagination-link is-current" href="'.$url.$i.'">'.$i.'</a></li>';
-        }else{
-            $tabla.='<li><a class="pagination-link" href="'.$url.$i.'">'.$i.'</a></li>';
+        if ($pagina == $i) {
+            $tabla .= '<li class="page-item active" aria-current="page"><a class="page-link" href="'.$url.$i.'">'.$i.'</a></li>';
+        } else {
+            $tabla .= '<li class="page-item"><a class="page-link" href="'.$url.$i.'">'.$i.'</a></li>';
         }
         $ci++;
     }
 
-    if($pagina==$Npaginas){
-        $tabla.='
+    if ($pagina == $Npaginas) {
+        $tabla .= '
         </ul>
-        <a class="pagination-next is-disabled" disabled >Siguiente</a>
-        ';
-    }else{
-        $tabla.='
-            <li><span class="pagination-ellipsis">&hellip;</span></li>
-            <li><a class="pagination-link" href="'.$url.$Npaginas.'">'.$Npaginas.'</a></li>
+         <li class="page-item disabled">
+            <a class="page-link">Siguiente</a>
+         ';
+    } else {
+        $tabla .= '
+
+         
+         <li class="page-item"><a class="page-link" href="' . $url . $Npaginas . '">' . $Npaginas . '</a></li>
         </ul>
-        <a class="pagination-next" href="'.$url.($pagina+1).'" >Siguiente</a>
+         <li class="page-item"><a class="page-link" href="' . $url . ($pagina + 1) . '">Siguiente</a></li>
+         
         ';
     }
 
-    $tabla.='</nav>';
+    $tabla .= '</nav>';
     return $tabla;
 }
