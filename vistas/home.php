@@ -1,4 +1,4 @@
-<div class="container home-div">
+<div class="container">
   
   <div class="px-4 pt-5 my-5 text-center">
     <h1 class="display-4 fw-bold text-body-emphasis">Bienvenido @Usuario</h1>

@@ -10,7 +10,7 @@
 
  
 <!-- Contenedor principal -->
-<div class="container-fluid">
+<div class="container-fluid vh-100">
     <?php
 
       if(!isset($_GET['vista']) || $_GET['vista'] == ""){
