@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
  
@@ -19,9 +21,9 @@
             Usuarios
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Nuevo</a></li>
-            <li><a class="dropdown-item" href="#">Listado</a></li>
-            <li><a class="dropdown-item" href="#">Buscar</a></li>
+            <li><a class="dropdown-item" href="index.php?vista=user_new">Nuevo</a></li>
+            <li><a class="dropdown-item" href="index.php?vista=user_list">Listado</a></li>
+            <li><a class="dropdown-item" href="index.php?vista=user_search">Buscar</a></li>
           </ul>
         </li>
         

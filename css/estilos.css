@@ -1,7 +1,11 @@
 body, html{
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  
 }
+
 .home-div{
   height: 100%;
   width: 100%;
@@ -25,6 +29,8 @@ a {
     background: linear-gradient(to right, rgba(106,17,203,0.55), rgba(37,117,252,0.55))
 
     }
+
+     /*Vista para Celulares*/
     
     @media (min-width: 768px) {
     .gradient-form {
@@ -128,3 +134,5 @@ a {
       .ui-datepicker-calendar {
         display: none;
         }
+
+        
