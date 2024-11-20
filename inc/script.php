@@ -23,7 +23,7 @@
 
 </script>
 
-<script src="../js/ajax.js"></script>
+<script src="./js/ajax.js"></script>
 
 <script>
   $('.fj-control').datepicker({

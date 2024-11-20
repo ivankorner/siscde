@@ -1,7 +1,7 @@
 <!-- Session --> <?php require "./inc/session_start.php" ?> <!-- Session -->
 
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <!-- head --> <?php include "./inc/head.php" ?> <!-- head -->
@@ -10,7 +10,7 @@
 
  
 <!-- Contenedor principal -->
-<div class="container-fluid vh-100">
+<div class="container-fluid">
     <?php
 
       if(!isset($_GET['vista']) || $_GET['vista'] == ""){
@@ -25,7 +25,7 @@
             // Vista
             include "./vistas/".$_GET['vista'].".php";        
             // Footer
-            include "./inc/footer.php";  
+            require_once "./inc/footer.php";  
             // Scripts
             include "./inc/script.php"; 
 

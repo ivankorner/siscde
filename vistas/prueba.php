@@ -1,6 +1,7 @@
 
 
 
+
 <div class="container-lg p-5 my-5">
     <div class="row justify-content-center">
 
@@ -15,16 +16,13 @@
 
                 <div class="row g-3">
                     <div class="col-md-4"><label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" name="usuario_nombre" pattern="[aáéíóöúüñ-zA-ZÁÉÍÓÖÚÜÑ ]{3,40}" title="Caracter no permitido" maxlength="40" required id="" class="form-control">
+                        <input type="text" name="usuario_nombre" pattern="[aáéíóöúüñ-zA-ZÁÉÍÓÖÚÜÑ]{3,40}" title="Caracter no permitido" maxlength="40" required id="" class="form-control">
                     </div>
                     <div class="col-md-4"><label for="apellido" class="form-label">Apellido</label>
-                        <input type="text" name="usuario_apellido" pattern="[aáéíóöúüñ-zA-ZÁÉÍÓÖÚÜÑ ]{3,40}" 
-                        title="Caracter no permitido" maxlength="40" required id="" class="form-control">
+                        <input type="text" name="usuario_apellido" pattern="[aáéíóöúüñ-zA-ZÁÉÍÓÖÚÜÑ]{3,40}" title="Caracter no permitido" maxlength="40" required id="" class="form-control">
                     </div>
                     <div class="col-md-4"><label for="usuario" class="form-label">Usuario</label>
-                        <input type="text" name="usuario_usurio" 
-                        pattern="[aáéíóöúüñ-zA-ZÁÉÍÓÖÚÜÑ ]{3,40}"
-                        maxlength="70" required id="" class="form-control">
+                        <input type="text" name="usuario_usurio" maxlength="70" required id="" class="form-control">
                     </div>
                     <div class="col-md-4"><label for="email" class="form-label">Email</label>
                         <input type="email" name="usuario_email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,40}$" maxlength="40"  id="" class="form-control">
