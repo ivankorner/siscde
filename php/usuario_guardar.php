@@ -26,12 +26,12 @@
     }
 
     /*== Verificando integridad de los datos ==*/
-    if(verificar_datos("[aáéíóöúüñ-zA-ZÁÉÍÓÖÚÜÑ ]{3,40}",$nombre)){
+    if(verificar_datos("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}",$nombre)){
         echo '
 
          <div class="alert alert-danger d-flex align-items-center"         role="alert">
                 <div>
-                    <strong> <i class="bi bi-exclamation-triangle-fill""></i> ¡Ocurrio un error inesperado!</strong> <br>
+                    <strong> <i class="bi bi-exclamation-triangle-fill"></i> ¡Ocurrio un error inesperado!</strong> <br>
                     El NOMBRE no coincide con el formato solicitado
                 </div>
             </div> 
@@ -43,11 +43,11 @@
         exit();
     }
 
-    if(verificar_datos("[aáéíóöúüñ-zA-ZÁÉÍÓÖÚÜÑ ]{3,40}",$apellido)){
+    if(verificar_datos("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}",$apellido)){
         echo '
             <div class="alert alert-danger d-flex align-items-center"         role="alert">
                 <div>
-                    <strong> <i class="bi bi-exclamation-triangle-fill""></i> ¡Ocurrio un error inesperado!</strong> <br>
+                    <strong> <i class="bi bi-exclamation-triangle-fill"></i> ¡Ocurrio un error inesperado!</strong> <br>
                     El APELLIDO no coincide con el formato solicitado
                 </div>
             </div> 
@@ -59,7 +59,7 @@
         echo '
             <div class="alert alert-danger d-flex align-items-center"         role="alert">
                 <div>
-                    <strong> <i class="bi bi-exclamation-triangle-fill""></i> ¡Ocurrio un error inesperado!</strong> <br>
+                    <strong> <i class="bi bi-exclamation-triangle-fill"></i> ¡Ocurrio un error inesperado!</strong> <br>
                     El USUARIO no coincide con el formato solicitado
                 </div>
             </div> 
@@ -71,7 +71,7 @@
         echo '
             <div class="alert alert-danger d-flex align-items-center"         role="alert">
                 <div>
-                    <strong> <i class="bi bi-exclamation-triangle-fill""></i> ¡Ocurrio un error inesperado!</strong> <br>
+                    <strong> <i class="bi bi-exclamation-triangle-fill"></i> ¡Ocurrio un error inesperado!</strong> <br>
                     Las CLAVES no coincide con el formato solicitado
                 </div>
             </div> 
@@ -89,7 +89,7 @@
 
                 <div class="alert alert-warning d-flex align-items-center"         role="alert">
                 <div>
-                    <strong> <i class="bi bi-exclamation-triangle-fill""></i> ¡Ocurrio un error inesperado!</strong> <br>
+                    <strong> <i class="bi bi-exclamation-triangle-fill"></i> ¡Ocurrio un error inesperado!</strong> <br>
                     El correo electrónico ingresado ya se encuentra registrado, por favor elija otro
                 </div>
             </div> 
@@ -106,7 +106,7 @@
 
              <div class="alert alert-danger d-flex align-items-center"         role="alert">
                 <div>
-                    <strong> <i class="bi bi-exclamation-triangle-fill""></i> ¡Ocurrio un error inesperado!</strong> <br>
+                    <strong> <i class="bi bi-exclamation-triangle-fill"></i> ¡Ocurrio un error inesperado!</strong> <br>
                     Ha ingresado un correo electrónico no valido
                 </div>
             </div> 
@@ -121,10 +121,14 @@
     $check_usuario=$check_usuario->query("SELECT usuario_usuario FROM usuario WHERE usuario_usuario='$usuario'");
     if($check_usuario->rowCount()>0){
         echo '
-            <div class="notification is-danger is-light">
-                <strong>¡Ocurrio un error inesperado!</strong><br>
-                El USUARIO ingresado ya se encuentra registrado, por favor elija otro
-            </div>
+
+         <div class="alert alert-warning d-flex align-items-center"         role="alert">
+                <div>
+                    <strong> <i class="bi bi-exclamation-triangle-fill"></i> ¡Ocurrio un error inesperado!</strong> <br>
+                    El USUARIO ingresado ya se encuentra registrado, por favor elija otro
+                </div>
+            </div> 
+
         ';
         exit();
     }
@@ -134,10 +138,18 @@
     /*== Verificando claves ==*/
     if($clave_1!=$clave_2){
         echo '
-            <div class="notification is-danger is-light">
-                <strong>¡Ocurrio un error inesperado!</strong><br>
-                Las CLAVES que ha ingresado no coinciden
-            </div>
+
+         <div class="alert alert-warning d-flex align-items-center"         role="alert">
+                <div>
+                    <strong> <i class="bi bi-exclamation-triangle-fill"></i> ¡Ocurrio un error inesperado!</strong> <br>
+                    Las CLAVES que ha ingresado no coinciden
+                </div>
+            </div> 
+
+
+
+
+            
         ';
         exit();
     }else{
@@ -161,19 +173,34 @@
 
     if($guardar_usuario->rowCount()==1){
         echo '
-            <div class="notification is-info is-light">
-                <strong>¡USUARIO REGISTRADO!</strong><br>
-                El usuario se registro con exito
-            </div>
+
+          <div class="alert alert-success d-flex align-items-center"         role="alert">
+                <div>
+                    <strong> <i class="bi bi-check-circle-fill"></i> ¡USUARIO REGISTRADO!</strong> <br>
+                    El usuario se registro con exito
+                </div>
+            </div>  
+              
         ';
+
+        
+        
     }else{
         echo '
-            <div class="notification is-danger is-light">
-                <strong>¡Ocurrio un error inesperado!</strong><br>
-                No se pudo registrar el usuario, por favor intente nuevamente
-            </div>
+
+         <div class="alert alert-warning d-flex align-items-center"         role="alert">
+                <div>
+                    <strong> <i class="bi bi-exclamation-triangle-fill"></i> ¡Ocurrio un error inesperado!</strong> <br>
+                    No se pudo registrar el usuario, por favor intente nuevamente
+                </div>
+            </div> 
+           
         ';
     }
+    
+    
+
+
     $guardar_usuario=null;
 
 
